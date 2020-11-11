@@ -1,7 +1,7 @@
-const express = require('express')
+const express = require('express') // - npm install -g express
 const bodyParser = require('body-parser')
 const {v4 : uuvid4} = require('uuid')
-const cors = require('cors'); //cors module
+const cors = require('cors'); //cors module - npm install cors
 
 //configure CORS
 const corsOptions = {
@@ -9,7 +9,9 @@ const corsOptions = {
     methods: "GET, POST, DELETE, PUT"
 }
 
+//Routes
 var modifyRoomRoute = require('./routes/ModifyRoom-FEATURE-kzi-30');
+var modifyAmenityRoute = require('./routes/ModifyAmenity-FEATURE-nta-52')
 
 const app = express();
 
@@ -18,6 +20,7 @@ const port = 8000;
 app.use(cors(corsOptions));
 app.use(bodyParser.json());
 app.use('/', modifyRoomRoute);
+app.use('/', modifyAmenityRoute)
 
 global.rooms = [
     {roomID : "0c772516-8963-42cf-b0fe-fe27e9febacb", roomType: "single", maxCapacity: 1, status: "available 1"},
