@@ -4,7 +4,7 @@ var express = require('express');
 var route = express.Router();
 
 //Require controller for the route
-var controller = require('../controllers/ModifyRoom');
+var controller = require('../controllers/ModifyRoom-FEATURE-kzi-30');
 
 route.post('/ModifyRoom', controller.addRoom);
 route.get('/ModifyRoom', controller.getRooms);
