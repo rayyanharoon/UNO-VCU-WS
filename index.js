@@ -9,7 +9,7 @@ const corsOptions = {
     methods: "GET, POST, DELETE, PUT"
 }
 
-var modifyRoomRoute = require('./routes/ModifyRoom');
+var modifyRoomRoute = require('./routes/ModifyRoom-FEATURE-kzi-30');
 
 const app = express();
 
