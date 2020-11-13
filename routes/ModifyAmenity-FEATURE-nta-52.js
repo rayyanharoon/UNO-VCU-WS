@@ -4,8 +4,8 @@ var route = express.Router()
 
 var controller = require('../controllers/ModifyAmenity-FEATURE-nta-52')
 
-route.get('/modifyamenity', controller.getAmenity)
+route.get('/ModifyAmenity-nta-52', controller.getAmenity)
 // route.post('/modifyamenity', controller.addAmenity)
-route.put('/modifyamenity', controller.updateAmenity)
+route.put('/ModifyAmenity-nta-52', controller.updateAmenity)
 
 module.exports = route;
