@@ -28,6 +28,13 @@ global.rooms = [
     {roomID: "d26c99d0-f5f5-4c5f-a09c-a49ec546e52c", roomType: "economyDouble", maxCapacity: 2, status: "occupied"}
 ]
 
+global.amenities = [
+    {amenityType: "None"},
+    {amenityType: "Pool Access"},
+    {amenityType: "Gym Access"},
+    {amenityType: "All Inclusions"}
+]
+
 // app.get('/ModifyRoom', (req,res)=> {
 //     res.send(rooms);
 // })
