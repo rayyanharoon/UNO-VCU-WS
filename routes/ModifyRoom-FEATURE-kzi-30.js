@@ -6,10 +6,10 @@ var route = express.Router();
 //Require controller for the route
 var controller = require('../controllers/ModifyRoom-FEATURE-kzi-30');
 
-route.post('/ModifyRoom', controller.addRoom);
-route.get('/ModifyRoom', controller.getRooms);
-route.put('/ModifyRoom', controller.modifyRoom);
-route.delete('/ModifyRoom', controller.deleteRoom);
+route.post('/modifyroom-kzi-30', controller.addRoom);
+route.get('/modifyroom-kzi-30', controller.getRooms);
+route.put('/modifyroom-kzi-30', controller.modifyRoom);
+route.delete('/modifyroom-kzi-30', controller.deleteRoom);
 
 
 //export the route
