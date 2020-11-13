@@ -17,7 +17,7 @@ const updateAmenity = function(req, res, next) {
     res.send(amenities)
 }
 
-module.exports = [
+module.exports = {
     getAmenity,
     updateAmenity
-]
+}
