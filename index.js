@@ -1,6 +1,6 @@
 const express = require('express') // - npm install -g express
 const bodyParser = require('body-parser')
-// const {v4 : uuvid4} = require('uuid')
+const {v4 : uuvid4} = require('uuid')
 const cors = require('cors'); //cors module - npm install cors
 const mongoose = require('mongoose')
 //configure CORS
