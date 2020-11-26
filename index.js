@@ -12,6 +12,7 @@ const corsOptions = {
 //Routes
 var modifyRoomRoute = require('./routes/ModifyRoom-FEATURE-kzi-30');
 var modifyAmenityRoute = require('./routes/ModifyAmenity-FEATURE-nta-52')
+var loginRoute = require('./routes/Login-FEATURE-kzi-30');
 
 const app = express();
 
@@ -21,6 +22,8 @@ app.use(cors(corsOptions));
 app.use(bodyParser.json());
 app.use('/', modifyRoomRoute);
 app.use('/', modifyAmenityRoute)
+app.use('/', loginRoute);
+
 
 global.rooms = [
     {roomID : "0c772516-8963-42cf-b0fe-fe27e9febacb", roomType: "single", maxCapacity: 1, status: "available 1"},
@@ -35,40 +38,10 @@ global.amenities = [
     {amenityType: "All Inclusions"}
 ]
 
-// app.get('/ModifyRoom', (req,res)=> {
-//     res.send(rooms);
-// })
-
-
-// app.post('/ModifyRoom', (req,res) => {
-//     var newRoom = {roomID: req.body.roomID, roomType: req.body.roomType, maxCapacity: req.body.maxCapacity, status: req.body.status}
-//     console.log("Added Room:")
-//     console.log(newRoom);
-//     rooms.push(newRoom);
-//     res.send(rooms);
-// })
-
-// app.put ('/ModifyRoom', (req, res) => {
-//     var idToUpdate = req.body.roomID;
-//     rooms.forEach(room => {
-//         if(room.roomID == idToUpdate)
-//         {
-//             room.roomType = req.body.roomType;
-//             room.maxCapacity = req.body.maxCapacity;
-//             room.status = req.body.status;
-//             res.send(rooms);
-//         }
-//     });
-// })
-
-// app.delete('/ModifyRoom',(req, res) => {
-//     var idToDelete = req.body.roomID;
-//     rooms = rooms.filter((room) => room.roomID != idToDelete);
-//     res.send(rooms);
-// })
-
-
 
 app.listen(port,() => {
     console.log(`Listening on port ${port}`);
+                                            //tba dbname
+    //mongoose.connect("mongodb://localhost:27017/users", {useNewUrlParser: true, useUnifiedTopology: true})
+
 })
