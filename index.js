@@ -14,6 +14,7 @@ var modifyRoomRoute = require('./routes/ModifyRoom-FEATURE-kzi-30');
 var modifyAmenityRoute = require('./routes/ModifyAmenity-FEATURE-nta-52')
 var loginRoute = require('./routes/Login-FEATURE-kzi-30');
 var waitlistRoute = require('./routes/WaitList-FEATURE-kzi-30');
+var waitlistviewRoute = require('./routes/WaitlistView-FEATURE-nta-52')
 
 const app = express();
 
@@ -25,6 +26,7 @@ app.use('/', modifyRoomRoute);
 app.use('/', modifyAmenityRoute)
 app.use('/', loginRoute);
 app.use('/', waitlistRoute);
+app.use('/', waitlistviewRoute);
 
 global.amenities = [
     {amenityType: "None"},

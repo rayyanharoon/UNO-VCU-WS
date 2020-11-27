@@ -5,8 +5,8 @@ var route = express.Router();
 var controller = require('../controllers/WaitlistView-FEATURE-nta-52');
 
 //Get all the cars
-route.get("/contacts/:id", controller.getCar);
-route.get("/contacts", controller.getCars);
+route.get("/contacts/:id", controller.getContacts);
+route.get("/contacts", controller.getContacts);
 // route.post("/cars", controller.createCar);
 // route.delete("/cars/:id", controller.deleteCar)
 
