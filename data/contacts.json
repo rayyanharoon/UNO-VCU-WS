@@ -1,0 +1,76 @@
+db.contacts.insertMany([{
+    "Name": "Osborne Stanislaw",
+    "Email": "ostanislaw0@fda.gov",
+    "Phone number": "155-729-4659",
+    "Address": "0 Colorado Pass"
+  }, {
+    "Name": "Tanney Cuthill",
+    "Email": "tcuthill1@house.gov",
+    "Phone number": "851-877-5157",
+    "Address": "8 Tomscot Alley"
+  }, {
+    "Name": "Tull Crysell",
+    "Email": "tcrysell2@arstechnica.com",
+    "Phone number": "278-316-0251",
+    "Address": "28 Hoepker Alley"
+  }, {
+    "Name": "Stephi Sorsby",
+    "Email": "ssorsby3@loc.gov",
+    "Phone number": "710-292-4723",
+    "Address": "007 Hintze Plaza"
+  }, {
+    "Name": "Danila Gianulli",
+    "Email": "dgianulli4@histats.com",
+    "Phone number": "747-350-4748",
+    "Address": "70 Stang Lane"
+  }, {
+    "Name": "Jemimah Burberry",
+    "Email": "jburberry5@theatlantic.com",
+    "Phone number": "614-946-4918",
+    "Address": "0 Memorial Lane"
+  }, {
+    "Name": "Ralf Brito",
+    "Email": "rbrito6@whitehouse.gov",
+    "Phone number": "235-364-3064",
+    "Address": "637 Cherokee Avenue"
+  }, {
+    "Name": "Budd Van Ross",
+    "Email": "bvan7@hostgator.com",
+    "Phone number": "601-233-5301",
+    "Address": "921 Reindahl Terrace"
+  }, {
+    "Name": "Joannes Quilliam",
+    "Email": "jquilliam8@xinhuanet.com",
+    "Phone number": "181-537-0112",
+    "Address": "53504 Mayfield Way"
+  }, {
+    "Name": "Rois Duckit",
+    "Email": "rduckit9@blinklist.com",
+    "Phone number": "118-238-1417",
+    "Address": "4553 Emmet Pass"
+  }, {
+    "Name": "Pat Pleace",
+    "Email": "ppleacea@multiply.com",
+    "Phone number": "946-805-8422",
+    "Address": "1 1st Pass"
+  }, {
+    "Name": "Hersh Aiskrigg",
+    "Email": "haiskriggb@whitehouse.gov",
+    "Phone number": "485-108-0242",
+    "Address": "633 Kennedy Parkway"
+  }, {
+    "Name": "Brian Ivamy",
+    "Email": "bivamyc@amazon.com",
+    "Phone number": "907-627-2660",
+    "Address": "40301 Dottie Street"
+  }, {
+    "Name": "Kelsy Meyrick",
+    "Email": "kmeyrickd@cbc.ca",
+    "Phone number": "868-944-8420",
+    "Address": "5 Mallory Park"
+  }, {
+    "Name": "Saundra Wigglesworth",
+    "Email": "swigglesworthe@a8.net",
+    "Phone number": "193-937-2942",
+    "Address": "52588 Clove Lane"
+  }]);
