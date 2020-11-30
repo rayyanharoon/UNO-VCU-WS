@@ -11,4 +11,7 @@ const schema = mongoose.Schema({
     versionKey:false
 })
 
-module.exports = mongoose.model("contact", schema);
+var contactdb = mongoose.createConnection('mongodb://localhost/contacts', {useNewUrlParser: true, useUnifiedTopology: true });
+const contactSchema = contactdb.model("contact", schema);
+
+module.exports = contactSchema;
