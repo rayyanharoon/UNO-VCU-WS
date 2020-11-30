@@ -9,4 +9,8 @@ const schema = mongoose.Schema({
     versionKey: false //Turn mongoose versioning off
 })
 
-module.exports = mongoose.model("user", schema);
+                //create new connection                      //db name
+const userdb = mongoose.createConnection('mongodb://localhost/users', {useNewUrlParser: true, useUnifiedTopology: true });
+const userschema = userdb.model("user", schema);
+                //export schema
+module.exports = userschema;
