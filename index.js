@@ -10,10 +10,10 @@ const corsOptions = {
 }
 
 //Routes
-var modifyRoomRoute = require('./routes/ModifyRoom-FEATURE-kzi-30');
-var modifyAmenityRoute = require('./routes/ModifyAmenity-FEATURE-nta-52')
-var loginRoute = require('./routes/Login-FEATURE-kzi-30');
-var waitlistRoute = require('./routes/WaitList-FEATURE-kzi-30');
+var modifyRoomRoute = require('../uno-vcu-proj-ws/routes/ModifyRoom-FEATURE-kzi-30');
+var modifyAmenityRoute = require('../uno-vcu-proj-ws/routes/ModifyAmenity-FEATURE-nta-52')
+var loginRoute = require('../uno-vcu-proj-ws/routes/Login-FEATURE-kzi-30');
+var waitlistRoute = require('../uno-vcu-proj-ws/routes/Waitlist-FEATURE-kzi-30');
 
 const app = express();
 
