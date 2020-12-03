@@ -1,7 +1,7 @@
 
-const ContactKzi30 = require("../models/Contact-kzi-30");
+const waitlistview = require("../models/WaitlistView-nta-52");
 
-exports.getContacts = async (req, res) => {
+exports.getWaitlist = async (req, res) => {
     // try {
     //     const getContacts = await Contacts.findOne({ _id: req.params.id })
     //     res.send(getCar);
@@ -9,5 +9,5 @@ exports.getContacts = async (req, res) => {
     //     res.status(404);
     //     res.send({ error: "Car does not exist: " + req.params.id })
     // }
-    res.send(ContactKzi30)
+    res.send(waitlistview)
 };

@@ -36,9 +36,6 @@ global.amenities = [
     {amenityType: "All Inclusions"}
 ]
 
-
-
-
 app.listen(port,() => {
     console.log(`Listening on port ${port}`);
     //tba dbname
