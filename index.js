@@ -16,6 +16,7 @@ var loginRoute = require('./routes/Login-FEATURE-kzi-30');
 var waitlistRoute = require('./routes/WaitList-FEATURE-kzi-30');
 var waitlistviewRoute = require('./routes/WaitlistView-FEATURE-nta-52')
 
+
 const app = express();
 
 const port = 8000;
@@ -41,11 +42,8 @@ global.amenities = [
 app.listen(port,() => {
     console.log(`Listening on port ${port}`);
     //tba dbname
-    //mongoose.connect("mongodb://localhost:27017/users", {useNewUrlParser: true, useUnifiedTopology: true})
+    mongoose.connect("mongodb://localhost:27017/users", {useNewUrlParser: true, useUnifiedTopology: true})
 
     //for waitlist
-    // mongoose.connect('mongodb://localhost:27017/contacts', {useNewUrlParser: true, useUnifiedTopology: true})
-
-    //for viewing waitlist
-    mongoose.connect("mongodb://localhost:27017/contacts", {useNewUrlParser: true, useUnifiedTopology: true})
+    // mongoose.connect('mongodb://localhost/contacts', {useNewUrlParser: true, useUnifiedTopology: true})
 })

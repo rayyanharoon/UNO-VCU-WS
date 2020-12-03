@@ -1,20 +1,55 @@
+const Room = require("../models/Room-kzi-30")
 
-const {v4 : uuvid4} = require('uuid')
-
-const addRoom = function(req,res,next){
-    var newRoom = {roomID: uuvid4(), roomType: req.body.roomType, maxCapacity: req.body.maxCapacity, status: req.body.status}
-    res.setHeader('Content-type','application/json')
-    console.log("Added Room:")
-    console.log(newRoom);
-    rooms.push(newRoom)
+exports.getRooms = async(req, res) => {
+    //asyc bc db might take a while
+    const rooms = await Room.find()
+    res.setHeader('Content-Type', 'application/json')
     res.send(rooms);
+
 }
 
-const getRooms = function(req,res,next){
-    res.send(rooms);
+exports.getRoom = async (req, res) => {
+    try{
+        //pull in the car from findOne, specifiy the id in the url and query by it
+        const getRoom = await Room.findOne({_id: req.params.id}) 
+        res.setHeader('Content-Type', 'application/json')
+        res.send( req.params.id);
+    } catch {
+        res.status(404);
+        res.send({error: "Room: " + req.params.id + " does not exist"})
+    }
 }
 
-const modifyRoom = function(req,res,next){
+exports.createRoom = async (req, res) => {
+    try {
+        const newRoom = new roomSchema({
+            roomType: req.body.roomType,
+            maxCapacity: req.body.maxCapacity,
+            status: req.body.status
+        });
+        await newRoom.save();
+        res.setHeader('Content-Type', 'application/json')
+        res.send(newRoom);
+    } catch {
+        res.status(500);
+        res.send({error:" could not create room, please try again"})
+    }
+}
+
+
+exports.deleteRoom = async (req,res) => {
+    console.log("delete room was called on : " + req.body.id);
+    try{
+        const getRoom = await Room.deleteOne({_id:req.body.id})
+        res.send(getRoom);
+    }catch{
+        res.status(500);
+        res.send({error: "Could not delete room: " + req.body.id})
+    }
+}
+
+//To be improved(connect to db, itn3 version)
+const editRoom = function(req,res,next){
     var idToUpdate = req.body.roomID;
     res.setHeader('Content-type','application/json')
 
@@ -30,18 +65,3 @@ const modifyRoom = function(req,res,next){
     
 }
 
-const deleteRoom = function(req,res,next){
-    res.setHeader('Content-type','application/json')
-
-    var idToDelete = req.body.roomID;
-    rooms = rooms.filter((room) => room.roomID != idToDelete);
-    res.send(rooms);
-}
-
-
-module.exports ={
-    getRooms,
-    addRoom,
-    modifyRoom,
-    deleteRoom
-}
