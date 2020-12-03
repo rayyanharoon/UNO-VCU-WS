@@ -11,4 +11,4 @@ const schema = mongoose.Schema({
     versionKey:false
 })
 
-module.exports = mongoose.model("contact", schema);
+module.exports = mongoose.model("contacts", schema);

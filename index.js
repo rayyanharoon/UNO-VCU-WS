@@ -40,10 +40,12 @@ global.amenities = [
 
 app.listen(port,() => {
     console.log(`Listening on port ${port}`);
-                                            //tba dbname
+    //tba dbname
     //mongoose.connect("mongodb://localhost:27017/users", {useNewUrlParser: true, useUnifiedTopology: true})
 
     //for waitlist
-    mongoose.connect('mongodb://localhost:27017/contacts', {useNewUrlParser: true, useUnifiedTopology: true})
+    // mongoose.connect('mongodb://localhost:27017/contacts', {useNewUrlParser: true, useUnifiedTopology: true})
 
+    //for viewing waitlist
+    mongoose.connect("mongodb://localhost:27017/contacts", {useNewUrlParser: true, useUnifiedTopology: true})
 })
