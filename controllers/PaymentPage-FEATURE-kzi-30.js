@@ -1,9 +1,9 @@
 
 
 const Payment = require("../models/Payment-kzi-30")
-exports.addToWaitlist = async function (req, res, next){
+exports.addPayment = async function (req, res, next){
    try {
-       const newPayment = new Contact({
+       const newPayment = new Payment({
         firstName: req.body.firstName,
         lastName:req.body.lastName,
            email: req.body.email,
