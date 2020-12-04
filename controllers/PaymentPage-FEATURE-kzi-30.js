@@ -7,8 +7,9 @@ exports.addToWaitlist = async function (req, res, next){
         firstName: req.body.firstName,
         lastName:req.body.lastName,
            email: req.body.email,
+           address: req.body.address,
            phone: req.body.phone,
-           address: req.body.address
+           paymentMethod: req.body.paymentMethod
        });
        await newPayment.save();
        res.save(newPayment);
