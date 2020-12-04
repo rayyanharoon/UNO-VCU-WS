@@ -20,3 +20,5 @@ module.exports = contactsList;
 //mongoose.connect("mongodb://localhost:27017/contacts", {useNewUrlParser: true, useUnifiedTopology: true})
 
 //mongo "mongodb+srv://atlaslab09-nta-52.lg6qi.mongodb.net/<dbname>" --username atlas-lab-nta-52
+
+//mongodb+srv://<username>:<password>@atlaslab09-nta-52.lg6qi.mongodb.net/<dbname>?retryWrites=true&w=majority
