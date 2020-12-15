@@ -14,12 +14,8 @@ var modifyRoomRoute = require('./routes/ModifyRoom-FEATURE-kzi-30');
 var modifyAmenityRoute = require('./routes/ModifyAmenity-FEATURE-nta-52')
 var loginRoute = require('./routes/Login-FEATURE-kzi-30');
 var waitlistRoute = require('./routes/Waitlist-FEATURE-kzi-30');
-<<<<<<< HEAD
 var waitlistviewRoute = require('./routes/WaitlistView-FEATURE-nta-52')
 var paymentPageRoute = require('./routes/PaymentPage-FEATURE-kzi-30')
-
-=======
->>>>>>> Waitlist-FEATURE-kzi-30
 
 const app = express();
 
