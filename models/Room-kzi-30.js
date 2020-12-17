@@ -9,6 +9,7 @@ const schema = mongoose.Schema({
     versionKey: false
 })
 
+
 var roomdb = mongoose.createConnection(`mongodb+srv://${usr}:${psw}@atlaslab.e3ssv.mongodb.net/rooms?retryWrites=true&w=majority`, {useNewUrlParser: true, useUnifiedTopology: true });
 const roomSchema = roomdb.model("room", schema);
 

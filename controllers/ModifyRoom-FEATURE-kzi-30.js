@@ -1,3 +1,4 @@
+
 const Room = require("../models/Room-kzi-30")
 
 exports.getRooms = async(req, res) => {
@@ -10,7 +11,6 @@ exports.getRooms = async(req, res) => {
 
 exports.getRoom = async (req, res) => {
     try{
-        //pull in the car from findOne, specifiy the id in the url and query by it
         const getRoom = await Room.findOne({_id: req.params.id}) 
         res.setHeader('Content-Type', 'application/json')
         res.send( req.params.id);
@@ -20,48 +20,50 @@ exports.getRoom = async (req, res) => {
     }
 }
 
-exports.createRoom = async (req, res) => {
+//WORKS!! DONT TOUCH
+exports.createRoom = async function (req, res){
     try {
-        const newRoom = new roomSchema({
+        const newRoom = new Room({
             roomType: req.body.roomType,
             maxCapacity: req.body.maxCapacity,
             status: req.body.status
         });
         await newRoom.save();
-        res.setHeader('Content-Type', 'application/json')
-        // res.send(newRoom);
+        // res.save(newRoom)
+        res.send({message:"successfully created room:" + newRoom._id})
     } catch {
         res.status(500);
         res.send({error:" could not create room, please try again"})
     }
 }
 
-
+//WORKS! DO NOT TOUCH
+//TO TEST IN REST API, ENTER "id" INSTEAD OF "_id  headers should have no ' or "" "
 exports.deleteRoom = async (req,res) => {
     console.log("delete room was called on : " + req.body.id);
     try{
         const getRoom = await Room.deleteOne({_id:req.body.id})
-        res.send(getRoom);
+        // res.save(getRoom);
+        res.send({message: "Successfully deleted room: " + req.body.id})
     }catch{
         res.status(500);
         res.send({error: "Could not delete room: " + req.body.id})
     }
 }
 
-//To be improved(connect to db, itn3 version)
-const editRoom = function(req,res,next){
-    var idToUpdate = req.body.roomID;
-    res.setHeader('Content-type','application/json')
+exports.updateRoom = async (req, res) => {
+    console.log("update rooom was called on: " + req.body.id);
+    try{
+        const updateRoom = await  Room.updateOne(req.body.id, req.body, {new: true})
+        res.send(updateRoom);
+    } catch {
+        res.status(500);
+        res.send({error: "Could not update room: " + req.body.id})
+    }
 
-    rooms.forEach(room => {
-        if(room.roomID == idToUpdate)
-        {
-            room.roomType = req.body.roomType;
-            room.maxCapacity = req.body.maxCapacity;
-            room.status = req.body.status;
-            res.send(rooms);
-        }
-    });
-    
 }
 
+  //  Room.findByIdAndUpdate(req.params.id, req.body, {new: true}, function (err, user) {
+//     if (err) return res.status(500).send("There was a problem updating the user.");
+//     res.status(200).send(user);
+// });
