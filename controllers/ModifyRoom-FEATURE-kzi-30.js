@@ -29,7 +29,7 @@ exports.createRoom = async (req, res) => {
         });
         await newRoom.save();
         res.setHeader('Content-Type', 'application/json')
-        res.send(newRoom);
+        // res.send(newRoom);
     } catch {
         res.status(500);
         res.send({error:" could not create room, please try again"})
