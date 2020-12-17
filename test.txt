@@ -1,1 +1,2 @@
-"test file" 
+GET http://localhost:8000/payment
+Content-Type : Application/json
