@@ -1,6 +1,6 @@
 
-
 const mongoose = require("mongoose")
+const {usr, psw} = require('../config')
 
 const schema = mongoose.Schema({
     firstName: String,
@@ -9,13 +9,14 @@ const schema = mongoose.Schema({
     address: String,
     phone: Number,
     paymentMethod: String
-},{
+}, {
     versionKey:false
 })
 
-module.exports = mongoose.model("payment", schema);
-var contactdb = mongoose.createConnection('mongodb://localhost/payments', {useNewUrlParser: true, useUnifiedTopology: true });
-const contactSchema = contactdb.model("payment", schema);
+const paymentInfodb = mongoose.createConnection(`mongodb+srv://${usr}:${psw}@atlaslab.e3ssv.mongodb.net/payments?retryWrites=true&w=majority`, {useNewUrlParser: true, useUnifiedTopology: true });
+const paymentInfoSchema = paymentInfodb.model("payment",schema);
 
-module.exports = contactSchema;
+module.exports = paymentInfoSchema;
+
+
 
