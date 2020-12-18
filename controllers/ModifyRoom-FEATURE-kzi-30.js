@@ -43,7 +43,7 @@ exports.deleteRoom = async (req,res) => {
     console.log("delete room was called on : " + req.body.id);
     try{
         const getRoom = await Room.deleteOne({_id:req.body.id})
-        // res.save(getRoom);
+        res.save(getRoom);
         res.send({message: "Successfully deleted room: " + req.body.id})
     }catch{
         res.status(500);
