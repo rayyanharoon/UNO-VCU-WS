@@ -10,10 +10,17 @@ exports.addToWaitlist = async function (req, res, next){
            address: req.body.address
        });
        await newContact.save();
-       res.save(newContact);
-       res.send({message: "added contact to waitlist"})
+    //    res.save(newContact);
+       res.send({message: "successfully added: " + newContact._id + " to the contacts db"})
    }catch{
        res.status(500);
        res.send({error: "Could not add contact"})
    }
+}
+
+exports.getWaitlist = async function (req,res) {
+    const contacts = await Contact.find()
+    res.setHeader('Content-Type', 'application/json')
+    res.send(contacts);
+
 }

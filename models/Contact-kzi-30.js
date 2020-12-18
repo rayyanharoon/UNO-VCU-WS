@@ -1,5 +1,5 @@
 
-
+const {usr, psw} = require('../config')
 const mongoose = require("mongoose")
 
 const schema = mongoose.Schema({
@@ -11,8 +11,8 @@ const schema = mongoose.Schema({
     versionKey:false
 })
 
-module.exports = mongoose.model("contacts", schema);
-var contactdb = mongoose.createConnection('mongodb://localhost/contacts', {useNewUrlParser: true, useUnifiedTopology: true });
+// module.exports = mongoose.model("contacts", schema);
+var contactdb = mongoose.createConnection(`mongodb+srv://${usr}:${psw}@atlaslab.e3ssv.mongodb.net/contacts?retryWrites=true&w=majority`, {useNewUrlParser: true, useUnifiedTopology: true });
 const contactSchema = contactdb.model("contact", schema);
 
 module.exports = contactSchema;
